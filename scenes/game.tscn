@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bmp0rkm84lyjp"]
+
+[ext_resource type="Script" uid="uid://roip0kniqo7b" path="res://script/game.gd" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://csb6dcw5yinnn" path="res://killzone.tscn" id="3_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://cwa04wccnivyq" path="res://scenes/levels/base_level.tscn" id="3_lnu2h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uylpw"]
+size = Vector2(42, 20)
+
+[node name="game" type="Node2D" unique_id=178135464]
+script = ExtResource("1_yqjtg")
+
+[node name="levelRoot" parent="." unique_id=1164654340 instance=ExtResource("3_lnu2h")]
+position = Vector2(32, 0)
+
+[node name="Killzone" parent="." unique_id=869232052 instance=ExtResource("3_lbhrr")]
+position = Vector2(2211, 345)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=181110297]
+position = Vector2(-2, 21)
+shape = SubResource("RectangleShape2D_uylpw")
